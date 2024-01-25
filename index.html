@@ -3,45 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <style>
-        body {
-            background-color: rgba(255, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        button {
-            font-size: 24px;
-            padding: 20px 40px;
-            background-color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-family: "Century Gothic", sans-serif;
-        }
-    </style>
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Formulario que envía una solicitud POST al servidor al presionar el botón -->
-    <form id="form_ejecutar" action="/ejecutar_codigo" method="post">
-        <button type="submit">Inicio</button>
-    </form>
-    <script>
-        document.getElementById('form_ejecutar').addEventListener('submit', function(event) {
-            event.preventDefault();  // Prevenir el envío del formulario
-            ejecutarCodigo();  // Llamar a la función para ejecutar el código Turtle
-        });
-
-        function ejecutarCodigo() {
-            fetch('/ejecutar_codigo')
-                .then(response => response.text())
-                .then(data => console.log(data))
-                .catch(error => console.log(error));
-        }
-    </script>
+    <div class="container">
+        <button id="inicio-btn">Inicio</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
 
