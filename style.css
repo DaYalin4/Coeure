@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: lightblue; /* Color de fondo azul celeste */
+    background-color: skyblue; /* Cambiado a azul cielo */
 }
 
 .container {
@@ -21,6 +21,7 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
 
 #turtleCanvas {
     border: 1px solid black;
