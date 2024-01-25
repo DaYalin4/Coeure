@@ -13,7 +13,7 @@ body {
 }
 
 button {
-    background-color: aqua; /* Color de fondo del botón azul turquesa */
+    background-color: red; /* Color de fondo del botón azul turquesa */
     color: white;
     padding: 10px 20px;
     border-radius: 50%; /* Hace el botón redondo */
