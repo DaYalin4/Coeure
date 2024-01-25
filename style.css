@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue; /* Color de fondo azul celeste */
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: lightblue; /* Color de fondo del botón azul celeste */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%; /* Hace el botón redondo */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
