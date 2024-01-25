@@ -6,7 +6,7 @@
     <title>Inicio</title>
     <style>
         body {
-            background-color: rgba(255, 0, 0, 0.2); /* Fondo rojo más tenue */
+            background-color: rgba(255, 0, 0, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,15 +18,23 @@
             padding: 20px 40px;
             background-color: white;
             border: none;
-            border-radius: 50%; /* Botón redondo */
+            border-radius: 50%;
             cursor: pointer;
-            font-family: "Century Gothic", sans-serif; /* Cambio de tipo de letra */
+            font-family: "Century Gothic", sans-serif;
         }
     </style>
 </head>
 <body>
-    <button onclick="ejecutarCodigo()">Inicio</button>
+    <!-- Formulario que envía una solicitud POST al servidor al presionar el botón -->
+    <form id="form_ejecutar" action="/ejecutar_codigo" method="post">
+        <button type="submit">Inicio</button>
+    </form>
     <script>
+        document.getElementById('form_ejecutar').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevenir el envío del formulario
+            ejecutarCodigo();  // Llamar a la función para ejecutar el código Turtle
+        });
+
         function ejecutarCodigo() {
             fetch('/ejecutar_codigo')
                 .then(response => response.text())
