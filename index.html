@@ -8,17 +8,23 @@
         body {
             background-color: red;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
         }
-
         button {
-            padding: 20px;
-            font-size: 18px;
+            font-size: 24px;
+            padding: 20px 40px;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
         }
     </style>
+</head>
+<body>
+    <button onclick="ejecutarCodigo()">Inicio</button>
     <script>
         function ejecutarCodigo() {
             fetch('/ejecutar_codigo')
@@ -27,8 +33,5 @@
                 .catch(error => console.log(error));
         }
     </script>
-</head>
-<body>
-    <button onclick="ejecutarCodigo()">Inicio</button>
 </body>
 </html>
