@@ -1,9 +1,28 @@
 document.getElementById("inicio-btn").addEventListener("click", function() {
-    // Aquí puedes poner el código JavaScript para ejecutar la acción al hacer clic en el botón
-    // Por ejemplo, podrías llamar a una función que ejecute el código Python proporcionado.
-    // Nota: Ejecutar código Python en el navegador requiere el uso de herramientas adicionales como Brython o Skulpt.
-    // Este script no ejecutará código Python directamente.
-    alert("Aquí se ejecutará el código Python proporcionado");
+    Sk.configure({output: drawOutput});
+    var code = `
+from turtle import *
+from colorsys import *
+
+bgcolor('black')
+speed(0)
+h=0
+
+for i in range(371):
+    c=hsv_to_rgb(h,1,1)
+    h+=0.005
+    color(c)
+    circle(-i*0.68,200)
+    right(80)
+
+done()
+    `;
+    Sk.importMainWithBody("<stdin>", false, code);
 });
 
+function drawOutput(out) {
+    Sk.canvas = "turtleCanvas";
+    Sk.tg = Sk.TurtleGraphicsScraper();
+    Sk.runner.restart();
+}
 
