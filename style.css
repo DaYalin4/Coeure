@@ -13,7 +13,7 @@ body {
 }
 
 button {
-    background-color: lightblue; /* Color de fondo del botón azul celeste */
+    background-color: aqua; /* Color de fondo del botón azul turquesa */
     color: white;
     padding: 10px 20px;
     border-radius: 50%; /* Hace el botón redondo */
@@ -25,3 +25,4 @@ button {
 #turtleCanvas {
     border: 1px solid black;
 }
+
