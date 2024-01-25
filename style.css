@@ -5,19 +5,5 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: red; /* Cambiado a rojo */
-}
-
-.container {
-    text-align: center;
-}
-
-button {
-    background-color: aqua; /* Color de fondo del botón azul turquesa */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50%; /* Hace el botón redondo */
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+    background-color: skyblue; /* Color de fondo azul cielo */
 }
