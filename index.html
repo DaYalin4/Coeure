@@ -8,10 +8,6 @@
 <body>
     <canvas id="canvas" width="800" height="800"></canvas>
     <script>
-        // Aquí pega tu código de Python convertido a JavaScript
-        // from turtle import *
-        // from colorsys import *
-
         function hsv_to_rgb(h, s, v) {
             let r, g, b;
             let i = Math.floor(h * 6);
@@ -40,5 +36,19 @@
             let h = 0;
 
             for (let i = 0; i < 371; i++) {
-        
+                let c = hsv_to_rgb(h, 1, 1);
+                h += 0.005;
+                ctx.beginPath();
+                ctx.strokeStyle = `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+                ctx.arc(canvas.width / 2, canvas.height / 2, -i * 0.68, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.closePath();
+            }
+        }
+
+        draw();
+    </script>
+</body>
+</html>
+
 
