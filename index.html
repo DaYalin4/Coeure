@@ -1,25 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrón Turtle</title>
-    <!-- Agrega comentarios explicativos sobre el propósito de estas metatags -->
-    <meta name="description" content="Generador de patrones Turtle">
-    <meta name="author" content="Tu nombre">
-    <style>
-        /* Estilos CSS para el canvas */
-        canvas {
-            display: block;
-            margin: auto;
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <!-- Canvas para dibujar el patrón generado por Turtle -->
-    <canvas id="turtleCanvas" width="800" height="600"></canvas>
-    <!-- Script JavaScript para dibujar en el canvas -->
-    <script src="script.js"></script>
-</body>
-</html>
+function hsv_to_rgb(h, s, v) {
+    let r, g, b;
+    let i = Math.floor(h * 6);
+    let f = h * 6 - i;
+    let p = v * (1 - s);
+    let q = v * (1 - f * s);
+    let t = v * (1 - (1 - f) * s);
+
+    switch (i % 6) {
+        case 0: r = v; g = t; b = p; break;
+        case 1: r = q; g = v; b = p; break;
+        case 2: r = p; g = v; b = t; break;
+        case 3: r = p; g = q; b = v; break;
+        case 4: r = t; g = p; b = v; break;
+        case 5: r = v; g = p; b = q; break;
+    }
+
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+function draw() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    let h = 0;
+
+    for (let i = 0; i < 371; i++) {
+        let c = hsv_to_rgb(h, 1, 1);
+        h += 0.005;
+        ctx.beginPath();
+        ctx.strokeStyle = `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+        ctx.arc(canvas.width / 2, canvas.height / 2, -i * 0.68, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.closePath();
+    }
+}
+
+draw();
